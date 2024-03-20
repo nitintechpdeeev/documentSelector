@@ -16,12 +16,14 @@ const CustomSelect = ({
 }) => {
   const handleChange = (e: BaseSyntheticEvent, name: string) => {
     const { value } = e.target;
-    setFilterKeys((prevState) => ({
-      ...prevState,
-      [name]: prevState[name as keyof FilterKeyType].includes(value)
-        ? prevState[name as keyof FilterKeyType]
-        : [...prevState[name as keyof FilterKeyType], value],
-    }));
+    if (value !== "") {
+      setFilterKeys((prevState) => ({
+        ...prevState,
+        [name]: prevState[name as keyof FilterKeyType].includes(value)
+          ? prevState[name as keyof FilterKeyType]
+          : [...prevState[name as keyof FilterKeyType], value],
+      }));
+    }
   };
   return (
     <div className="w-full">
