@@ -26,10 +26,10 @@ const CustomSelect = ({
     }
   };
   return (
-    <div className="w-full">
+    <div className="w-full border-[1.5px] border-grey-400 rounded-lg pr-2">
       <select
         onClick={(e) => handleChange(e, name)}
-        className="bg-[white] p-3 border-[1.5px] rounded pr-20 py-2 w-full text-sm"
+        className="bg-[white] p-3 pr-20 py-2 w-full text-sm"
       >
         <option value="">{title}</option>
         {options.map((item: string, index: number) => (
